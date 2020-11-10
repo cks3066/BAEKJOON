@@ -1,6 +1,6 @@
 # BAEKJOON
 
-Algorithm 연습
+Solving Algorithm
 
 백준 문제 풀이
 
