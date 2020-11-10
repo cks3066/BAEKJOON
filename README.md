@@ -1,6 +1,6 @@
 # BAEKJOON
 
-Solving Algorithm
+Solving Algorithms
 
 백준 문제 풀이
 
