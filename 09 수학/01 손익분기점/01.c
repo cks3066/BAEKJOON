@@ -14,7 +14,7 @@ int main()
 	if (B >= C)
 		printf("%d", -1);
 	else
-	printf("%d", num + 1);
+		printf("%d", num + 1);
 
 
 
