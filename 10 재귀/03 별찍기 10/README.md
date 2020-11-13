@@ -72,4 +72,59 @@ I와 J의 기본값으로 0을 설정하고 모든 값을 I,J 에 따라 움직�
 하지만 값이 틀렸다고 나온다.
 어디가 문제인지 찾아할 것같다.
 
+#include <iostream>
+#include <cassert>
+
+using namespace std;
+
+char arr[2188][2188] = { ' ',};
+
+void makeRect(int n,int I = 0,int J = 0) {
+	assert(n % 3 == 0);
+
+	if (n == 3) { // 그냥 0부터 3으로 하는게 아니라 뭔가 방법이 필요하다.
+		for (int i = I; i < I + n; i++) {
+			for (int j = J; j < J + n; j++) {
+				if (i == n/n + I && j == n/n + J)
+					arr[i][j] = ' ';
+				else
+					arr[i][j] = '*';
+			}
+		}
+	}
+	else { // n/3 씩 늘어난다.
+		for (int i = I; i < I + n; i += (n / 3)) {
+			for (int j = J; j < J + n; j += (n / 3)) {
+				if (i == n/3 + I && j == n/3 +J) {
+					// 공백생성
+					arr[i][j] = ' ';
+				}
+				else {
+					makeRect(n / 3, i, j);
+				}
+			}
+		}
+	}
+}
+ 
+int main() {
+	int N;
+
+	cin >> N;
+	assert(N % 3 == 0);
+
+	makeRect(N);
+
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			cout << arr[i][j];
+		}
+		cout << '\n';
+	}
+
+	return 0;
+}
+
+위 코드에서 문제가 어디일까..
+
 ### 해결
