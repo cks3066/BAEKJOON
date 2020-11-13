@@ -73,11 +73,6 @@ I와 J의 기본값으로 0을 설정하고 모든 값을 I,J 에 따라 움직�
 어디가 문제인지 찾아할 것같다.
 
 
-#include <iostream>
-#include <cassert>
-
-using namespace std;
-
 char arr[2188][2188] = { ' ',};
 
 void makeRect(int n,int I = 0,int J = 0) 
