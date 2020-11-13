@@ -96,12 +96,10 @@ void makeRect(int n,int I = 0,int J = 0)
 	else {
 		for (int i = I; i < I + n; i += (n / 3)) {
 			for (int j = J; j < J + n; j += (n / 3)) {
-				if (i == n/3 + I && j == n/3 +J) {
+				if (i == n/3 + I && j == n/3 +J)
 					arr[i][j] = ' ';
-				}
-				else {
+				else
 					makeRect(n / 3, i, j);
-				}
 			}
 		}
 	}
