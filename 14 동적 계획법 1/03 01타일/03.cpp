@@ -30,6 +30,6 @@ int main() {
 	cin >> N;
 
 	cout << AbleTile(N);
-
+ 
 	return 0;
 }
