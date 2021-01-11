@@ -8,6 +8,6 @@ int main()
 	a = a - b;
 
 	printf("%d", a);
-
+ 
 	return 0;
 }
