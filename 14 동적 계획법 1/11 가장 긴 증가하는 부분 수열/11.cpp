@@ -9,7 +9,6 @@ int N;
 int A[MAX];
 int memo[MAX];
 
-
 void LengthSequence(int index) {
 	if(index == N)
 		memo[N] = 1;
