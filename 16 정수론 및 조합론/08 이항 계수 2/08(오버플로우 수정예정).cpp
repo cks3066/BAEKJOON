@@ -12,7 +12,7 @@ unsigned long long int Memoization(int M) {
     if (M == 1) {
         return memo[N][M] = N;
     }
-    return memo[N][M] = (Memoization(M-1) * (N - M + 1) / M);
+    return memo[N][M] = Memoization(M-1) * (N - M + 1 / M);
 }
 int main()
 {
