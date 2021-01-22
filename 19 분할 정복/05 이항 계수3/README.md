@@ -31,19 +31,39 @@
 즉,  (K! * (N - K)!) 의 모듈러 역원을 구한뒤 모듈러의 곱에 대한 정리를 활용한다.
 
 여기서 (K! * (N - K)!)의 역원을 구하는 방식에 대한 효율적인 알고리즘이 필요하다.
+    
+    int ModF(int n) {
+     if (n == 1) return 1;
+        return ((n % mod) * ModF(n - 1)) % mod;
+     }
 
-    long long IEM(int n) {
+    int  IEM(int n) {
         if (n == 1) {
-        return 1;
-    }
-    long long ie = mod / n;
-    while (true) {
-        if ((n * ie) % mod == 1) {
-            break;
+          return 1;
         }
+        long long ie = mod / n;
+        while (true) {
+            if ((n * ie) % mod == 1) {
+                break;
+              }
         ie++;
+        }
+        return ie;
     }
-    return ie;
+
+    int main()
+    {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int N, K;
+    cin >> N >> K;
+
+    cout << (ModF(N) * IEM((ModF(K) * ModF(N - K)% mod) % mod)) % mod;
+
+    // (ModF(K) * ModF(N - K)) 의 모듈러 역원을 구한뒤 모듈러의 곱 활용
+
+    return 0;
     }
 
 완전 탐색의 방법으로 moduler inverse을 구하려고 하였으나 값이 너무 커서 굉장히 비효율적이고 시간 소유가 많이 걸린다.
