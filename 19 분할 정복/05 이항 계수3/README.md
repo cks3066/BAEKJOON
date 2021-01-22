@@ -32,7 +32,7 @@
 
 여기서 (K! * (N - K)!)의 역원을 구하는 방식에 대한 효율적인 알고리즘이 필요하다.
 
-    int  IEM(int n) {
+    long long IEM(int n) {
         if (n == 1) {
         return 1;
     }
