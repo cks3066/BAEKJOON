@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#define MAX 1000+1
+#define MAX 5000+1
 
 #include <iostream>
 #include <vector>
