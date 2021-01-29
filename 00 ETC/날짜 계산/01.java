@@ -21,8 +21,7 @@ public class Main {
 				System.out.println(year);
 				return;
 			}
-			else
-				++year;
+			++year;
 		}
 
 	}
