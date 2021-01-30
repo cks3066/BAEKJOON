@@ -59,14 +59,13 @@ int main() {
 
     sort(v.begin(), v.end());
 
-    int *parent = new int[V+1];  // Union-Find 사용
+    int *parent = new int[V+1];
     for (int i = 1; i <= V; i++) {
         parent[i] = i;
     }
 
     int sum = 0;
     for (int i = 0; i < v.size(); i++) {
-        //사이클이 발생하지 않는 경우 그래프에 포함
         if (!findParent(parent, v[i].node[0], v[i].node[1])) {
             sum += v[i].distance;
             unionParent(parent, v[i].node[0], v[i].node[1]);
